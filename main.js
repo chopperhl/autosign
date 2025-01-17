@@ -1,5 +1,5 @@
 const checkin= async (url,cookie) => {
-  if (!cookie) return
+  if (!cookie) return "NO_CONFIG"
   try {
     const headers = {
       'cookie': cookie,
@@ -31,11 +31,9 @@ const main = async () => {
   const url2 = process.env.URL_2
   console.log(await checkin(url2,cookie2))
 
-
   const cookie3 = process.env.COOKIE_3
   const url3 = process.env.URL_3
   console.log(await checkin(url3,cookie3))
-
 
   const cookie4 = process.env.COOKIE_4
   const url4 = process.env.URL_4
