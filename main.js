@@ -6,7 +6,7 @@ const checkin= async (url,cookie) => {
       'content-type': "text/html; charset=utf-8",
       'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36',
     }
-    state = await fetch(url+"/attendance.php", {
+    const state = await fetch(url+"/attendance.php", {
       method: 'GET',
       headers,
     }).then((r) => r.status)
