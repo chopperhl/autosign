@@ -9,7 +9,7 @@ const checkin= async (url,cookie) => {
     await fetch(url+"/attendance.php", {
       method: 'GET',
       headers,
-    }).then((r) => r.json())
+    }).then((r) => r.status)
     return [
       'Checkin OK'
     ]
