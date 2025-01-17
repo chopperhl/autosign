@@ -11,7 +11,7 @@ const checkin= async (url,cookie) => {
       headers,
     }).then((r) => r.status)
     return [
-      'Checkin OK',state
+      'Checkin OK',`${state}`
     ]
   } catch (error) {
     return [
