@@ -25,3 +25,5 @@ jobs:
           URL_3: ${{ secrets.URL_3}}
           COOKIE_4: ${{ secrets.COOKIE_4}}
           URL_4: ${{ secrets.URL_4}}
+          COOKIE_5: ${{ secrets.COOKIE_5}}
+          URL_5: ${{ secrets.URL_5}}

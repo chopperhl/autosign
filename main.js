@@ -21,6 +21,28 @@ const checkin= async (url,cookie) => {
   }
 }
 
+const checkin_fullurl= async (url,cookie) => {
+  if (!cookie) return "NO_CONFIG"
+  try {
+    const headers = {
+      'cookie': cookie,
+      'content-type': "text/html; charset=utf-8",
+      'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36',
+    }
+    const state = await fetch(url, {
+      method: 'GET',
+      headers,
+    }).then((r) => r.status)
+    return [
+      'Checkin OK',`${state}`
+    ]
+  } catch (error) {
+    return [
+      'Checkin Error',
+      `${error}`,
+    ]
+  }
+}
 
 const main = async () => {
   const cookie1 = process.env.COOKIE_1
@@ -38,6 +60,10 @@ const main = async () => {
   const cookie4 = process.env.COOKIE_4
   const url4 = process.env.URL_4
   console.log(await checkin(url4,cookie4))
+
+  const cookie5 = process.env.COOKIE_5
+  const url5 = process.env.URL_5
+  console.log(await checkin_fullurl(url5,cookie5))
 }
 
 main()
